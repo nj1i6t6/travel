@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 旅遊規劃助理</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 傳統腳本，保持不變 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- 【重大修正】將您自己的腳本宣告為 module，並移除所有舊的 AI 函式庫 script 標籤 -->
+    <script type="module" src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- 已移除不再需要的金鑰輸入框 -->
+
+    <div class="app-container">
+        <header>
+            <h1>AI 旅遊規劃助理</h1>
+            <button id="show-trips-btn">我的行程</button>
+        </header>
+
+        <main class="chat-window">
+            <div id="message-list">
+                </div>
+            <div id="loading-indicator" class="hidden">
+                <div class="spinner"></div>
+                <span>AI 正在思考中...</span>
+            </div>
+        </main>
+
+        <footer>
+            <div class="input-area">
+                <textarea id="chat-input" placeholder="例如：我想去京都 5 天 4 夜，喜歡逛古蹟跟吃美食..." rows="1"></textarea>
+                <button id="send-btn" title="傳送訊息">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+            <button id="generate-trip-btn">✨ 一鍵生成行程並儲存</button>
+        </footer>
+    </div>
+    
+    <div id="trip-list-modal" class="modal-overlay hidden">
+        <div class="modal-content large">
+            <h2>我的行程列表</h2>
+            <div id="trip-list-content">
+                </div>
+            <button class="close-btn">關閉</button>
+        </div>
+    </div>
+
+</body>
+</html>
